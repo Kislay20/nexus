@@ -1,0 +1,27 @@
+# Python environments
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Environment variables (CRITICAL)
+.env
+*.env
+*.env.local
+nexus-ui/.env*
+
+# Database & SQLite WAL files (CRITICAL)
+*.db
+*.sqlite3
+*.db-wal
+*.db-shm
+
+# Next.js / Node
+node_modules/
+nexus-ui/node_modules/
+nexus-ui/.next/
+nexus-ui/out/
+
+# IDEs
+.vscode/
+.idea/

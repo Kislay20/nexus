@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    ports:
+      - "${GATEWAY_PORT:-8000}:8000"
+    volumes:
+      - nexus-data:/app/data
+      - ./keys:/app/keys:ro # Keys mounted Read-Only outside the DB!
+    env_file:
+      - .env
+    environment:
+      - NEXUS_DB=/app/data/nexus_secure.db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/healthz"]
+      interval: 10s
+      retries: 3
+      start_period: 5s
+
+  # Agent/MCP Service (Simulated/Live based on NEXUS_MODE)
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent
+    depends_on:
+      gateway:
+        condition: service_healthy
+    env_file:
+      - .env
+
+  # Mock PayPal API (For zero-credential demo runs)
+  mock-paypal:
+    image: mockserver/mockserver:latest
+    ports:
+      - "1080:1080"
+    environment:
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/mock_paypal.json
+
+volumes:
+  nexus-data:
+    name: nexus_secure_db_volume

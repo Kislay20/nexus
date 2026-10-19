@@ -1,0 +1,128 @@
+{
+  "version": "1.0",
+  "exported_at": "2026-10-18T20:05:18.053585Z",
+  "ledger_public_key": "c172a15917a6705a47b32969cab0a768f3a103c620acb8a55289ac0ebff6dd34",
+  "total_blocks": 12,
+  "chain": [
+    {
+      "seq": 1,
+      "kind": "DECISION",
+      "reservation_id": "rsv_3585de1267b446d59992e5e0",
+      "body": "{\"agent_claim\":{\"offer_id\":\"offer_headset_90\",\"quantity\":\"1\",\"rationale\":\"Biometric approval test #0b0647db\"},\"created_at\":\"2026-10-18T19:40:07.820551Z\",\"decision\":\"ESCALATE\",\"final_code\":\"ESCALATE_OVER_THRESHOLD\",\"idempotency_key\":\"req_0b0647db\",\"reservation_id\":\"rsv_3585de1267b446d59992e5e0\",\"resolved\":{\"category\":\"electronics\",\"item_total\":\"90.00\",\"merchant_id\":\"shopA\",\"offer_hash\":\"c8705a3ed21ff415b8599c57076bac197fa7291e0274492726dfc5102573d830\",\"offer_id\":\"offer_headset_90\",\"payee_merchant_id\":\"CSWSXHLUVXFGY\",\"quantity\":1,\"shipping\":\"0.00\",\"sku\":\"SKU-offer_headset_90\",\"tax\":\"0.00\",\"title\":\"Gaming Headset\",\"total\":\"90.00\"},\"steps\":[{\"code\":\"OK\",\"facts\":{\"category\":\"electronics\",\"item_total\":\"90.00\",\"merchant\":\"shopA\",\"offer_hash\":\"c8705a3ed21ff415\",\"shipping\":\"0.00\",\"tax\":\"0.00\",\"total\":\"90.00\",\"unit_price\":\"90.00\"},\"passed\":true,\"rule\":\"offer.resolve\"},{\"code\":\"OK\",\"facts\":{\"revoked\":false},\"passed\":true,\"rule\":\"warrant.active\"},{\"code\":\"OK\",\"facts\":{\"expires_at\":\"2026-11-17T19:39:34.870098+00:00\",\"not_before\":\"2026-10-17T19:39:34.870098+00:00\"},\"passed\":true,\"rule\":\"warrant.window\"},{\"code\":\"OK\",\"facts\":{\"offer\":\"USD\",\"warrant\":\"USD\"},\"passed\":true,\"rule\":\"offer.currency\"},{\"code\":\"OK\",\"facts\":{\"merchant\":\"shopA\"},\"passed\":true,\"rule\":\"policy.merchant\"},{\"code\":\"OK\",\"facts\":{\"category\":\"electronics\"},\"passed\":true,\"rule\":\"policy.category\"},{\"code\":\"OK\",\"facts\":{\"max\":\"100.00\",\"total\":\"90.00\"},\"passed\":true,\"rule\":\"policy.per_txn\"},{\"code\":\"OK\",\"facts\":{\"budget\":\"100.00\",\"committed_before\":\"0.00\",\"recent_count\":0,\"remaining_after\":\"10.00\",\"replay\":false},\"passed\":true,\"rule\":\"ledger.reserve\"},{\"code\":\"ESCALATE_OVER_THRESHOLD\",\"facts\":{\"threshold\":\"50.00\",\"total\":\"90.00\"},\"passed\":true,\"rule\":\"policy.approval_threshold\"}],\"trace_id\":\"trc_e6d2fe7f84fe457a\",\"warrant_id\":\"wrt_demo_001\"}",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "6f0bb74ea3447e0baa33810ed5387f3bccb150f76d8e891e008c84371da38614",
+      "signature": "026ec874fe60270afa952e96ceae7ebb4d9cebbb19b30c96bfaa393c53af6e9140167ed17090b68e7f62d0f7787648a239c2b007af3a363c54b4b031b490b205",
+      "created_at": "2026-10-18T19:40:07.820859Z"
+    },
+    {
+      "seq": 2,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_3585de1267b446d59992e5e0",
+      "body": "{\"at\":\"2026-10-18T19:40:12.135207Z\",\"code\":\"OK\",\"event\":\"AUTHORIZED\",\"facts\":{\"amount\":\"90.00\",\"currency\":\"USD\"},\"paypal\":{\"authorization_id\":\"7B5967481J272993P\",\"order_id\":\"3GV67620YE172312L\"},\"reservation_id\":\"rsv_3585de1267b446d59992e5e0\"}",
+      "prev_hash": "6f0bb74ea3447e0baa33810ed5387f3bccb150f76d8e891e008c84371da38614",
+      "hash": "91c2f3aebf7a42ea0b6b44a16ede3c266ad3bf81256b895ef5c6953a061b05dd",
+      "signature": "5509c7ae502c305b55e520b4d6c4e682d723f15bae3ffe0007b59057d1306fce04c859da83e353883021b9d530778dddd5846f0ca56efb059ce3c62d2bc69404",
+      "created_at": "2026-10-18T19:40:12.135347Z"
+    },
+    {
+      "seq": 3,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_3585de1267b446d59992e5e0",
+      "body": "{\"at\":\"2026-10-18T19:41:07.157602Z\",\"code\":\"DENY_REJECTED_BY_HUMAN\",\"event\":\"REJECTED\",\"facts\":{},\"paypal\":{},\"reservation_id\":\"rsv_3585de1267b446d59992e5e0\"}",
+      "prev_hash": "91c2f3aebf7a42ea0b6b44a16ede3c266ad3bf81256b895ef5c6953a061b05dd",
+      "hash": "6319452ab14bb33b77283c136e3665ab92ee92d6de7f606fa51e94266b3707a7",
+      "signature": "b4981dcd014b0a85c7d2d38a55af8d0ff2e3ac822d3d2687198fb1f5a82d1f947f55b177eb8a41a4a1642b25ce7c6c0ff658264f47a072fe2e10672ace90490c",
+      "created_at": "2026-10-18T19:41:07.157723Z"
+    },
+    {
+      "seq": 4,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_3585de1267b446d59992e5e0",
+      "body": "{\"at\":\"2026-10-18T19:41:09.609166Z\",\"code\":\"DENY_REJECTED_BY_HUMAN\",\"event\":\"VOIDED\",\"facts\":{\"detail\":\"human rejected\"},\"paypal\":{},\"reservation_id\":\"rsv_3585de1267b446d59992e5e0\"}",
+      "prev_hash": "6319452ab14bb33b77283c136e3665ab92ee92d6de7f606fa51e94266b3707a7",
+      "hash": "70969204e950436aa71cbb7096bfae9c7daa66fcef749cf2cbf898bd32426496",
+      "signature": "f626b307d9515de7bf3e21c0ee94324b780742b3a377f677b5b1f5f84738f242642bb3b57e688193b8bcbe2c7f23eb602d344b7a3ca87cce5f5d0d6ce527d305",
+      "created_at": "2026-10-18T19:41:09.609307Z"
+    },
+    {
+      "seq": 5,
+      "kind": "DECISION",
+      "reservation_id": "rsv_281c51650c104e9c9439db4a",
+      "body": "{\"agent_claim\":{\"offer_id\":\"offer_headset_90\",\"quantity\":\"1\",\"rationale\":\"Biometric approval test #25f229d0\"},\"created_at\":\"2026-10-18T19:46:57.160491Z\",\"decision\":\"ESCALATE\",\"final_code\":\"ESCALATE_OVER_THRESHOLD\",\"idempotency_key\":\"req_25f229d0\",\"reservation_id\":\"rsv_281c51650c104e9c9439db4a\",\"resolved\":{\"category\":\"electronics\",\"item_total\":\"90.00\",\"merchant_id\":\"shopA\",\"offer_hash\":\"c8705a3ed21ff415b8599c57076bac197fa7291e0274492726dfc5102573d830\",\"offer_id\":\"offer_headset_90\",\"payee_merchant_id\":\"CSWSXHLUVXFGY\",\"quantity\":1,\"shipping\":\"0.00\",\"sku\":\"SKU-offer_headset_90\",\"tax\":\"0.00\",\"title\":\"Gaming Headset\",\"total\":\"90.00\"},\"steps\":[{\"code\":\"OK\",\"facts\":{\"category\":\"electronics\",\"item_total\":\"90.00\",\"merchant\":\"shopA\",\"offer_hash\":\"c8705a3ed21ff415\",\"shipping\":\"0.00\",\"tax\":\"0.00\",\"total\":\"90.00\",\"unit_price\":\"90.00\"},\"passed\":true,\"rule\":\"offer.resolve\"},{\"code\":\"OK\",\"facts\":{\"revoked\":false},\"passed\":true,\"rule\":\"warrant.active\"},{\"code\":\"OK\",\"facts\":{\"expires_at\":\"2026-11-17T19:39:34.870098+00:00\",\"not_before\":\"2026-10-17T19:39:34.870098+00:00\"},\"passed\":true,\"rule\":\"warrant.window\"},{\"code\":\"OK\",\"facts\":{\"offer\":\"USD\",\"warrant\":\"USD\"},\"passed\":true,\"rule\":\"offer.currency\"},{\"code\":\"OK\",\"facts\":{\"merchant\":\"shopA\"},\"passed\":true,\"rule\":\"policy.merchant\"},{\"code\":\"OK\",\"facts\":{\"category\":\"electronics\"},\"passed\":true,\"rule\":\"policy.category\"},{\"code\":\"OK\",\"facts\":{\"max\":\"100.00\",\"total\":\"90.00\"},\"passed\":true,\"rule\":\"policy.per_txn\"},{\"code\":\"OK\",\"facts\":{\"budget\":\"100.00\",\"committed_before\":\"0.00\",\"recent_count\":1,\"remaining_after\":\"10.00\",\"replay\":false},\"passed\":true,\"rule\":\"ledger.reserve\"},{\"code\":\"ESCALATE_OVER_THRESHOLD\",\"facts\":{\"threshold\":\"50.00\",\"total\":\"90.00\"},\"passed\":true,\"rule\":\"policy.approval_threshold\"}],\"trace_id\":\"trc_89d0e6ea5abb46d6\",\"warrant_id\":\"wrt_demo_001\"}",
+      "prev_hash": "70969204e950436aa71cbb7096bfae9c7daa66fcef749cf2cbf898bd32426496",
+      "hash": "2ac1d0b7180160418c1615e61ff58b7bc2a9f331f806dab54913328d3fa896d6",
+      "signature": "46aa5e89623d73f6547a496aaab34bf70a5e3d67bfea4aa934da56806f58f9c4475ed7714f17ab90ec8a72c8585b2e2f90f0704041db4a384c4391879afcc809",
+      "created_at": "2026-10-18T19:46:57.160630Z"
+    },
+    {
+      "seq": 6,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_281c51650c104e9c9439db4a",
+      "body": "{\"at\":\"2026-10-18T19:47:00.102042Z\",\"code\":\"OK\",\"event\":\"AUTHORIZED\",\"facts\":{\"amount\":\"90.00\",\"currency\":\"USD\"},\"paypal\":{\"authorization_id\":\"2T651993ME910684J\",\"order_id\":\"17A059343M375540X\"},\"reservation_id\":\"rsv_281c51650c104e9c9439db4a\"}",
+      "prev_hash": "2ac1d0b7180160418c1615e61ff58b7bc2a9f331f806dab54913328d3fa896d6",
+      "hash": "86e1c88719dff9a7b095b41d28d53470c94c67fa9a35aae45b320373b38c7300",
+      "signature": "dab59dc429c0edff247fd09bfa2bcb876b9962948635a93d916515978df26db2d8d11c6729990ef2259495afcdf6227c461f6abae014284d7080de34b061da02",
+      "created_at": "2026-10-18T19:47:00.102135Z"
+    },
+    {
+      "seq": 7,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_281c51650c104e9c9439db4a",
+      "body": "{\"at\":\"2026-10-18T19:47:28.709214Z\",\"code\":\"DENY_REJECTED_BY_HUMAN\",\"event\":\"REJECTED\",\"facts\":{},\"paypal\":{},\"reservation_id\":\"rsv_281c51650c104e9c9439db4a\"}",
+      "prev_hash": "86e1c88719dff9a7b095b41d28d53470c94c67fa9a35aae45b320373b38c7300",
+      "hash": "887ca4c2402615ef8743c0a7dbcef0b4aebf3478d03e33c205a9dafb6436419f",
+      "signature": "f464c0012abee9fd98d772cc4cdbdcbf18d78d148bd9a7290d86c5b9aeac12be7572fc9f14cece6c3651b707df3991749b332e66ba25578b0d71e18d138fb901",
+      "created_at": "2026-10-18T19:47:28.709367Z"
+    },
+    {
+      "seq": 8,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_281c51650c104e9c9439db4a",
+      "body": "{\"at\":\"2026-10-18T19:47:30.507826Z\",\"code\":\"DENY_REJECTED_BY_HUMAN\",\"event\":\"VOIDED\",\"facts\":{\"detail\":\"human rejected\"},\"paypal\":{},\"reservation_id\":\"rsv_281c51650c104e9c9439db4a\"}",
+      "prev_hash": "887ca4c2402615ef8743c0a7dbcef0b4aebf3478d03e33c205a9dafb6436419f",
+      "hash": "9dae339f2cbe4c22b9c466bb36e3edad21da9744313a9d0e6515977a562103f8",
+      "signature": "f4bd0fb80623e99d537836f5781dbadef4f9324b950f67810f6d1288bbc0ff6029e87956590f8568f7086af8e60fa6fe94a518de0817eb053b8b56a1d0a54800",
+      "created_at": "2026-10-18T19:47:30.507985Z"
+    },
+    {
+      "seq": 9,
+      "kind": "DECISION",
+      "reservation_id": "rsv_ea22674490814c818ecc6007",
+      "body": "{\"agent_claim\":{\"offer_id\":\"offer_headset_90\",\"quantity\":\"1\",\"rationale\":\"Biometric approval test #c9f313e8\"},\"created_at\":\"2026-10-18T19:48:35.296201Z\",\"decision\":\"ESCALATE\",\"final_code\":\"ESCALATE_OVER_THRESHOLD\",\"idempotency_key\":\"req_c9f313e8\",\"reservation_id\":\"rsv_ea22674490814c818ecc6007\",\"resolved\":{\"category\":\"electronics\",\"item_total\":\"90.00\",\"merchant_id\":\"shopA\",\"offer_hash\":\"c8705a3ed21ff415b8599c57076bac197fa7291e0274492726dfc5102573d830\",\"offer_id\":\"offer_headset_90\",\"payee_merchant_id\":\"CSWSXHLUVXFGY\",\"quantity\":1,\"shipping\":\"0.00\",\"sku\":\"SKU-offer_headset_90\",\"tax\":\"0.00\",\"title\":\"Gaming Headset\",\"total\":\"90.00\"},\"steps\":[{\"code\":\"OK\",\"facts\":{\"category\":\"electronics\",\"item_total\":\"90.00\",\"merchant\":\"shopA\",\"offer_hash\":\"c8705a3ed21ff415\",\"shipping\":\"0.00\",\"tax\":\"0.00\",\"total\":\"90.00\",\"unit_price\":\"90.00\"},\"passed\":true,\"rule\":\"offer.resolve\"},{\"code\":\"OK\",\"facts\":{\"revoked\":false},\"passed\":true,\"rule\":\"warrant.active\"},{\"code\":\"OK\",\"facts\":{\"expires_at\":\"2026-11-17T19:39:34.870098+00:00\",\"not_before\":\"2026-10-17T19:39:34.870098+00:00\"},\"passed\":true,\"rule\":\"warrant.window\"},{\"code\":\"OK\",\"facts\":{\"offer\":\"USD\",\"warrant\":\"USD\"},\"passed\":true,\"rule\":\"offer.currency\"},{\"code\":\"OK\",\"facts\":{\"merchant\":\"shopA\"},\"passed\":true,\"rule\":\"policy.merchant\"},{\"code\":\"OK\",\"facts\":{\"category\":\"electronics\"},\"passed\":true,\"rule\":\"policy.category\"},{\"code\":\"OK\",\"facts\":{\"max\":\"100.00\",\"total\":\"90.00\"},\"passed\":true,\"rule\":\"policy.per_txn\"},{\"code\":\"OK\",\"facts\":{\"budget\":\"100.00\",\"committed_before\":\"0.00\",\"recent_count\":2,\"remaining_after\":\"10.00\",\"replay\":false},\"passed\":true,\"rule\":\"ledger.reserve\"},{\"code\":\"ESCALATE_OVER_THRESHOLD\",\"facts\":{\"threshold\":\"50.00\",\"total\":\"90.00\"},\"passed\":true,\"rule\":\"policy.approval_threshold\"}],\"trace_id\":\"trc_a1647bf50859434c\",\"warrant_id\":\"wrt_demo_001\"}",
+      "prev_hash": "9dae339f2cbe4c22b9c466bb36e3edad21da9744313a9d0e6515977a562103f8",
+      "hash": "6635e43f62984be41da9c49759a07f289d7f739fc399d34adf36b4409e7774a7",
+      "signature": "9e8b1900cbb390cd9f54118d6b489c7f8ee796f28815a94e5d0542d15f661490f6f3a36dc2846302f98282546640c586478b7aa73c4d6b9e69efc38ca25ea30d",
+      "created_at": "2026-10-18T19:48:35.296323Z"
+    },
+    {
+      "seq": 10,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_ea22674490814c818ecc6007",
+      "body": "{\"at\":\"2026-10-18T19:48:38.143915Z\",\"code\":\"OK\",\"event\":\"AUTHORIZED\",\"facts\":{\"amount\":\"90.00\",\"currency\":\"USD\"},\"paypal\":{\"authorization_id\":\"3YF416708R008544T\",\"order_id\":\"0TK21856WM037582E\"},\"reservation_id\":\"rsv_ea22674490814c818ecc6007\"}",
+      "prev_hash": "6635e43f62984be41da9c49759a07f289d7f739fc399d34adf36b4409e7774a7",
+      "hash": "803a3fa35ab8da48a997c1d36f152d3cd18f284ef3fcd89b1e403a1a347c90a3",
+      "signature": "529390c1bc7fcbec21f343afaa04bfb31bb9bb84e51b1ae53608e399bc5b2ae4db821f40cfe1993854a442250984275722f1c1a19a7da3197a6910ebab4ea50c",
+      "created_at": "2026-10-18T19:48:38.144091Z"
+    },
+    {
+      "seq": 11,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_ea22674490814c818ecc6007",
+      "body": "{\"at\":\"2026-10-18T19:49:06.857374Z\",\"code\":\"OK\",\"event\":\"APPROVED\",\"facts\":{},\"paypal\":{},\"reservation_id\":\"rsv_ea22674490814c818ecc6007\"}",
+      "prev_hash": "803a3fa35ab8da48a997c1d36f152d3cd18f284ef3fcd89b1e403a1a347c90a3",
+      "hash": "bcb2822aaa4a0202aa4765ca04c5e30936329caa435ad2ea9606e7d4adbe7774",
+      "signature": "afe402343d8e05ea1cdebff70360154e355a7dd996e03fbd5ffaf1e54750c7900e16add0915114dd21f840287bcbccde7bc1498b53f2eae5b270968abb27c101",
+      "created_at": "2026-10-18T19:49:06.857648Z"
+    },
+    {
+      "seq": 12,
+      "kind": "LIFECYCLE",
+      "reservation_id": "rsv_ea22674490814c818ecc6007",
+      "body": "{\"at\":\"2026-10-18T19:49:09.711791Z\",\"code\":\"OK\",\"event\":\"CAPTURED\",\"facts\":{\"amount\":\"90.00\"},\"paypal\":{\"authorization_id\":\"3YF416708R008544T\",\"capture_id\":\"59L122618N0908643\"},\"reservation_id\":\"rsv_ea22674490814c818ecc6007\"}",
+      "prev_hash": "bcb2822aaa4a0202aa4765ca04c5e30936329caa435ad2ea9606e7d4adbe7774",
+      "hash": "71fb88462b30041bdf8807448ffa84094a3edee449600a51b13de19ed2ece263",
+      "signature": "51b07334dce020b8994f3faeb28453d1083dfc0f15eae909a2e93c28e10a60e73a534672e306f5eaf61f499d5ba0d9532b5bd6bb38125d0bdabfb8b2ab69880f",
+      "created_at": "2026-10-18T19:49:09.711942Z"
+    }
+  ]
+}
