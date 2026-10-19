@@ -97,8 +97,9 @@ def create_app(gateway: Gateway | None = None, approver_key: str | None = None) 
         # Store a master token to be used silently by the Simulate button
         app.state.demo_token = ledger.issue_agent_token(warrant.warrant_id)
 
-        # 2. Force the Gateway to use our internal Catalog endpoint
-        os.environ["CATALOG_URL"] = "http://127.0.0.1:8000/catalog"
+        # 2. Force the Gateway to use our internal Catalog endpoint dynamically
+        port = os.environ.get("PORT", "10000")
+        os.environ["CATALOG_URL"] = f"http://127.0.0.1:{port}/catalog"
 
         if app.state.gateway is None:
             app.state.gateway = build_gateway_from_env()
